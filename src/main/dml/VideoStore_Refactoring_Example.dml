@@ -1,0 +1,2 @@
+package org.videostore;
+// *.dml file name must be the same as specified in the artifactId in the pom.
