@@ -16,3 +16,7 @@ relation DomainRootHasCustomer {
 
 class Rental {
 }
+
+
+class Movie {
+}
