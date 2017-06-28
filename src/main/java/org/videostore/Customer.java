@@ -5,11 +5,10 @@ import java.util.Vector;
 import pt.ist.fenixframework.FenixFramework;
 
 public class Customer extends Customer_Base {
-	private String name;
 	private Vector<Rental> rentals = new Vector<Rental>();
 	
 	public Customer (String name){
-		this.name = name;
+		this.setName(name);
 		FenixFramework.getDomainRoot().addCustomer(this);
 	}
 	
@@ -21,10 +20,6 @@ public class Customer extends Customer_Base {
 	
 	public void addRental(Rental arg) {
 		rentals.addElement(arg);
-	}
-	
-	public String getName (){
-		return name;
 	}
 	
 	public String statement() {
