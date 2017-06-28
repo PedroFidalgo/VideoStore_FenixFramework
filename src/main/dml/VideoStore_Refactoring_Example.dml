@@ -3,3 +3,12 @@ package org.videostore;
 
 class Customer {
 }
+
+relation DomainRootHasCustomer {
+	.pt.ist.fenixframework.DomainRoot playsRole root {
+		multiplicity 1..1;
+	}
+	Customer playsRole customer {
+		multiplicity 0..*;
+	}
+}
