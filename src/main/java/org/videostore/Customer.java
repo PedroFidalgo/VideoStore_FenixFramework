@@ -2,7 +2,7 @@ package org.videostore;
 
 import java.util.Vector;
 
-public class Customer {
+public class Customer extends Customer_Base {
 	private String name;
 	private Vector<Rental> rentals = new Vector<Rental>();
 	
