@@ -2,6 +2,9 @@ package org.videostore;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.After;
 import org.junit.Test;
 
@@ -27,6 +30,12 @@ public class VideoStorePersistenceTest {
 	@Atomic(mode = TxMode.READ)
 	public void atomicAssert () {
 		assertEquals(1, FenixFramework.getDomainRoot().getCustomerSet().size());
+		
+		List<Customer> customers = new ArrayList<Customer>(FenixFramework.getDomainRoot().getCustomerSet());
+		Customer customer = customers.get(0);
+		
+		assertEquals(CUSTOMER_NAME, customer.getName());
+		
 	}
 	
 	@After
