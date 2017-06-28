@@ -2,10 +2,11 @@ package org.videostore;
 
 import static org.junit.Assert.assertEquals;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-public class GeneralTest {
+public class GeneralTest extends RollbackTestAbstractClass {
 
 	private Customer customer1;
 	private Customer customer2;
@@ -18,8 +19,8 @@ public class GeneralTest {
 	private Rental rental2;
 	private Rental rental3;
 	
-	@Before
-	public void setUp () {
+	@Override
+	public void populate4Test() {
 		newRelease = new Movie("Jaws", 1);
 		children = new Movie("Snow White", 2);
 		regular = new Movie("The Matrix", 0);
@@ -37,6 +38,7 @@ public class GeneralTest {
 		customer4.addRental(rental2);
 		customer4.addRental(rental3);
 	}
+	
 	@Test
 	public void nameTest () {
 		assertEquals("Mary", customer1.getName());
@@ -64,5 +66,4 @@ public class GeneralTest {
 	public void success4 () {
 		assertEquals("Rental Record for Tony\n\tJaws\t9.0\n\tSnow White\t1.5\n\tThe Matrix\t3.5\nAmount owed is 14.0\nYou earned 4 frequent renter points", customer4.statement());
 	}
-	
 }

@@ -7,6 +7,8 @@
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
   	<mainclass>org.videostore.App</mainclass>
+	<version.org.slf4j>1.7.25</version.org.slf4j>
+	<version.ch.qos.logback>1.2.3</version.ch.qos.logback>
   	<!--FenixFramework-->
   	<version.fenixframework>2.6.2</version.fenixframework>
 	<fenix.framework.codeGeneratorClassName>pt.ist.fenixframework.backend.jvstmojb.codeGenerator.FenixCodeGeneratorOneBoxPerObject</fenix.framework.codeGeneratorClassName>
@@ -99,6 +101,17 @@
   		<version>4.12</version>
   		<scope>test</scope>
   	</dependency>
+	<!-- Logging -->
+	<dependency>
+		<groupId>org.slf4j</groupId>
+		<artifactId>slf4j-api</artifactId>
+		<version>${version.org.slf4j}</version>
+	</dependency>
+	<dependency>
+		<groupId>ch.qos.logback</groupId>
+		<artifactId>logback-classic</artifactId>
+		<version>${version.ch.qos.logback}</version>
+	</dependency>
   </dependencies>
   <repositories>
   	<repository>
