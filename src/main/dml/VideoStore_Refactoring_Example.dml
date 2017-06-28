@@ -13,3 +13,6 @@ relation DomainRootHasCustomer {
 		multiplicity 0..*;
 	}
 }
+
+class Rental {
+}

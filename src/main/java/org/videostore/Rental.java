@@ -1,6 +1,6 @@
 package org.videostore;
 
-public class Rental {
+public class Rental extends Rental_Base {
 	private Movie movie;
 	private int daysRented;
 	public Rental(Movie movie, int daysRented) {
