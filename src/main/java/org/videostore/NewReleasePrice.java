@@ -1,6 +1,6 @@
 package org.videostore;
 
-public class NewReleasePrice extends Price {
+public class NewReleasePrice implements Price {
 
 	@Override
 	public int getPriceCode() {
@@ -14,7 +14,7 @@ public class NewReleasePrice extends Price {
 
 	@Override
 	public int getFrequentRenterPoints(int daysRented) {
-		return (daysRented > 1) ? 2 : super.getFrequentRenterPoints(daysRented);
+		return (daysRented > 1) ? 2 : Price.super.getFrequentRenterPoints(daysRented);
 	}
 	
 

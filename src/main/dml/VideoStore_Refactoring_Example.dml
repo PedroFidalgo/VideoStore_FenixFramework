@@ -18,5 +18,13 @@ class Rental {
 }
 
 
-class Movie {
+relation CustomerHasRental {
+	Customer playsRole customer {
+		multiplicity 0..1;
+	}
+	Rental playsRole rental {
+		multiplicity 0..*;
+	}
 }
+
+

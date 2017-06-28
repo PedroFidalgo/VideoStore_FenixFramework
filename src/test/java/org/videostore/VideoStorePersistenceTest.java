@@ -14,6 +14,10 @@ import pt.ist.fenixframework.FenixFramework;
 
 public class VideoStorePersistenceTest {
 	private static final String CUSTOMER_NAME = "Alice";
+	private static final String MOVIE_TITLE = "Jaws";
+	private static final int PRICE_CODE = 1;
+	private static final int DAYS_RENTED = 3;
+	
 	@Test
 	public void success () {
 		atomicProcess();
@@ -24,6 +28,9 @@ public class VideoStorePersistenceTest {
 	@Atomic(mode = TxMode.WRITE)
 	public void atomicProcess () {
 		Customer customer = new Customer(CUSTOMER_NAME);
+//		Movie movie = new Movie(MOVIE_TITLE, PRICE_CODE);
+//		Rental rental = new Rental(movie, DAYS_RENTED);
+//		customer.addRental(rental);
 	}
 	
 	

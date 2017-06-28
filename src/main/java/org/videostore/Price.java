@@ -1,9 +1,9 @@
 package org.videostore;
 
-public abstract class Price {
+public interface Price {
 	public abstract int getPriceCode();
 	public abstract double getCharge (int daysRented);
-	public int getFrequentRenterPoints (int daysRented) {
+	public default int getFrequentRenterPoints (int daysRented) {
 		return 1;
 	}
 }

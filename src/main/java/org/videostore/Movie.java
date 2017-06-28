@@ -1,6 +1,6 @@
 package org.videostore;
 
-public class Movie extends Movie_Base {
+public class Movie {
 	public static final int REGULAR = 0;
 	public static final int NEW_RELEASE = 1;
 	public static final int CHILDREN = 2;
@@ -10,6 +10,7 @@ public class Movie extends Movie_Base {
 		this.title = title;
 		setPriceCode(priceCode);
 	}
+	
 	public int getPriceCode() {
 		return price.getPriceCode();
 	}

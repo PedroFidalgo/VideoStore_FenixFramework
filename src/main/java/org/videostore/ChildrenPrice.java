@@ -1,6 +1,6 @@
 package org.videostore;
 
-public class ChildrenPrice extends Price {
+public class ChildrenPrice implements Price {
 
 	@Override
 	public int getPriceCode() {

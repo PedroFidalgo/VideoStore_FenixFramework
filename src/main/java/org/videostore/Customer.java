@@ -1,11 +1,8 @@
 package org.videostore;
 
-import java.util.Vector;
-
 import pt.ist.fenixframework.FenixFramework;
 
 public class Customer extends Customer_Base {
-	private Vector<Rental> rentals = new Vector<Rental>();
 	
 	public Customer (String name){
 		this.setName(name);
@@ -14,17 +11,17 @@ public class Customer extends Customer_Base {
 	
 	public void delete() {
 		setRoot(null);
-
+		
+		for (Rental rental : this.getRentalSet()) {
+			rental.delete();
+		}
+		
 		deleteDomainObject();
-	}
-	
-	public void addRental(Rental arg) {
-		rentals.addElement(arg);
 	}
 	
 	public String statement() {
 		String result = "Rental Record for " + getName() + "\n";
-		for (Rental rental : rentals) {
+		for (Rental rental : this.getRentalSet()) {
 			//show figures for this rental
 			result += "\t" + rental.getMovie().getTitle()+ "\t"
 					+ String.valueOf(rental.getCharge()) + "\n";
@@ -38,7 +35,7 @@ public class Customer extends Customer_Base {
 	
 	private double getTotalAmount () {
 		double totalAmount = 0;
-		for (Rental rental : rentals) {
+		for (Rental rental : this.getRentalSet()) {
 			totalAmount += rental.getCharge();
 		}
 		return totalAmount;
@@ -46,7 +43,7 @@ public class Customer extends Customer_Base {
 	
 	private int getTotalFrequentRenterPoints () {
 		int frequentRenterPoints = 0;
-		for (Rental rental : rentals) {
+		for (Rental rental : this.getRentalSet()) {
 			frequentRenterPoints += rental.getFrequentRenterPoints();
 		}
 		return frequentRenterPoints;

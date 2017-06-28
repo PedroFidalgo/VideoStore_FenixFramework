@@ -7,6 +7,14 @@ public class Rental extends Rental_Base {
 		this.movie = movie;
 		this.daysRented = daysRented;
 	}
+	
+	public void delete() {
+		this.setCustomer(null);
+		// TODO: delete movie when persistent
+		
+		this.deleteDomainObject();
+	}
+	
 	public int getDaysRented() {
 		return daysRented;
 	}
