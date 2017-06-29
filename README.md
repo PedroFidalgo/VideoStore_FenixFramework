@@ -12,3 +12,6 @@ A database named 'videostore' needs to be created before running the test suite 
 
 To run the test suite:  
 In the project folder 'mvn clean compile test'.
+
+To run App.java:  
+In the project folder 'mvn clean compile exec:java'.
