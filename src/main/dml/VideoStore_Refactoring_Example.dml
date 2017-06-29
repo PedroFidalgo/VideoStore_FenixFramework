@@ -30,7 +30,7 @@ relation CustomerHasRental {
 
 
 class Movie {
-
+	String title;
 }
 
 

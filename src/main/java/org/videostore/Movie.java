@@ -4,10 +4,9 @@ public class Movie extends Movie_Base {
 	public static final int REGULAR = 0;
 	public static final int NEW_RELEASE = 1;
 	public static final int CHILDREN = 2;
-	private String title;
 	private Price price;
 	public Movie(String title, int priceCode) {
-		this.title = title;
+		setTitle(title);
 		setPriceCode(priceCode);
 	}
 	
@@ -35,9 +34,6 @@ public class Movie extends Movie_Base {
 		default:
 			throw new IllegalArgumentException("Incorrect Price Code.");
 		}
-	}
-	public String getTitle (){
-		return title;
 	}
 	public double getCharge (int daysRented) {
 		return price.getCharge(daysRented);
