@@ -31,6 +31,7 @@ relation CustomerHasRental {
 
 class Movie {
 	String title;
+	int priceCode;
 }
 
 
@@ -41,5 +42,6 @@ relation RentalHasMovie {
 	Movie playsRole movie {
 		multiplicity 1..1;
 	}
-
 }
+
+

@@ -12,15 +12,12 @@ public class Movie extends Movie_Base {
 	
 	public void delete () {
 		setRental(null);
-		// TODO: delete Price when persistent
 		deleteDomainObject();
 	}
 	
-	
-	public int getPriceCode() {
-		return price.getPriceCode();
-	}
+	@Override
 	public void setPriceCode(int arg) {
+		super.setPriceCode(arg);
 		switch (arg) {
 		case REGULAR:
 			price = new RegularPrice();
