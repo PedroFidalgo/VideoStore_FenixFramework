@@ -11,7 +11,7 @@ DB preparation:
 A database named 'videostore' needs to be created before running the test suite in MySQL. The configuration file named fenix-framework.properties should work by default.
 
 To run the test suite:  
-In the project folder 'mvn clean compile test'.
+In the project root folder 'mvn clean compile test'.
 
 To run App.java:  
-In the project folder 'mvn clean compile exec:java'.
+In the project root folder 'mvn clean compile exec:java'.
