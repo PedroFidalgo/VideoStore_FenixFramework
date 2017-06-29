@@ -24,13 +24,12 @@ public class VideoStorePersistenceTest {
 		atomicAssert();
 	}
 	
-	@SuppressWarnings("unused")
 	@Atomic(mode = TxMode.WRITE)
 	public void atomicProcess () {
 		Customer customer = new Customer(CUSTOMER_NAME);
-//		Movie movie = new Movie(MOVIE_TITLE, PRICE_CODE);
-//		Rental rental = new Rental(movie, DAYS_RENTED);
-//		customer.addRental(rental);
+		Movie movie = new Movie(MOVIE_TITLE, PRICE_CODE);
+		Rental rental = new Rental(movie, DAYS_RENTED);
+		customer.addRental(rental);
 	}
 	
 	
@@ -42,6 +41,16 @@ public class VideoStorePersistenceTest {
 		Customer customer = customers.get(0);
 		
 		assertEquals(CUSTOMER_NAME, customer.getName());
+		
+		List<Rental> rentals = new ArrayList<Rental>(customer.getRentalSet());
+		Rental rental = rentals.get(0);
+		assertEquals(1, rentals.size());
+		assertEquals(DAYS_RENTED, rental.getDaysRented());
+		
+		Movie movie = rental.getMovie();
+		
+		assertEquals(MOVIE_TITLE, movie.getTitle());
+		assertEquals(PRICE_CODE, movie.getPriceCode());
 		
 	}
 	
