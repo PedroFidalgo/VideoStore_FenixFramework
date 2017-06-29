@@ -29,3 +29,17 @@ relation CustomerHasRental {
 }
 
 
+class Movie {
+
+}
+
+
+relation RentalHasMovie {
+	Rental playsRole rental {
+		multiplicity 0..1;
+	}
+	Movie playsRole movie {
+		multiplicity 1..1;
+	}
+
+}

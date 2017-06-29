@@ -1,6 +1,6 @@
 package org.videostore;
 
-public class Movie {
+public class Movie extends Movie_Base {
 	public static final int REGULAR = 0;
 	public static final int NEW_RELEASE = 1;
 	public static final int CHILDREN = 2;
@@ -10,6 +10,13 @@ public class Movie {
 		this.title = title;
 		setPriceCode(priceCode);
 	}
+	
+	public void delete () {
+		setRental(null);
+		// TODO: delete Price when persistent
+		deleteDomainObject();
+	}
+	
 	
 	public int getPriceCode() {
 		return price.getPriceCode();
