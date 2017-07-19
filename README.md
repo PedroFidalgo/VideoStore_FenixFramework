@@ -26,4 +26,7 @@ If you have Docker:
 2) Build the app image, in the project root folder:  
    'docker build -t videostore_fenixframework .'
 3) Run the container and link it with the MySQL container (the Dockerfile runs the automated tests using the 'db' container):  
-   'docker run -it --rm --name videostore_fenixframework_mysql --link db:localhost  videostore_fenixframework'
+   'docker run -it --rm --name videostore_fenixframework_mysql --link db:localhost  videostore_fenixframework'  
+
+Alternative (if you have Docker, Maven and JDK but don't want to install MySQL), create a MySQL container with the expected parameters and maps a port for access via host machine:  
+In the project root folder, 'docker-compose -f local.dev.yml up'
